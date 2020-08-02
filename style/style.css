@@ -1,0 +1,822 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Andale Mono;
+    src: url("../font/andale.ttf");
+}
+
+body {
+    color: white;
+    background-color: black;
+    font-family: 'Impact', sans-serif;
+}
+
+.section1 {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.section1 header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 2vw 0 0;
+    position: relative;
+    z-index: 10;
+}
+
+.section1 header a {
+    text-decoration: none;
+    font-size: 1.2vw;
+    padding: 0 2vw;
+    color: white;
+    border-right: 0.26vw solid white;
+    height: 2.34vw;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.5vw;
+    cursor: pointer;
+}
+
+.section1 header a:last-of-type {
+    border-right: none;
+}
+
+.section1 header a:hover {
+    text-shadow: 0 0 1vw #ffb4de, 0 0 1vw white, 0 0 0.3vw #c791b6;
+}
+
+.section1 .title {
+    font-size: 12.6vw;
+    line-height: 9.9vw;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 8.8vw;
+    padding: 12.24vw 0 2.6vw 5.63vw;
+    cursor: default;
+    position: relative;
+    z-index: 0;
+}
+
+.section1 .subTitle {
+    font-size: 1.28vw;
+    width: 100%;
+    text-align: right;
+    letter-spacing: 0.1vw;
+    padding: 0 5vw 0;
+    position: relative;
+    z-index: 3;
+    cursor: default;
+    font-family: 'Courier', sans-serif;
+    font-weight: 100;
+}
+
+.parallax__layer--base {
+    background-image: url(../img/smoke.png);
+    background-repeat: no-repeat;
+    background-position: 35% 182%;
+    background-size: 113%;
+}
+
+.parallax__layer--back {
+    background-image: url(../img/Astronaut1.png);
+    background-repeat: no-repeat;
+    background-position: center 108%;
+    background-size: 97%;
+}
+
+.parallax__layer--backSmoke {
+    background-image: url(../img/smoke.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+}
+
+
+.paralax {
+    position: relative;
+    width: 100%;
+    height: 54.5vw;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.paralax:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, black, transparent);
+    z-index: 1000;
+}
+
+
+.paralax div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+
+#road {
+    z-index: 2;
+}
+
+.paralax img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.section2 {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 4.03vw 3.44vw 2.35vw 2.6vw;
+    background-image: url(../img/earth.png);
+    background-repeat: no-repeat;
+    background-position: 50% 113%;
+    background-size: cover;
+    cursor: default;
+}
+
+.section2 .boxLeft {
+    width: 43%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.section2 .boxLeft .tittle {
+    font-size: 3.02vw;
+    letter-spacing: 0.94vw;
+    padding-left: 3.33vw;
+    margin: 0 0 7.7vw;
+}
+
+.section2 .boxLeft .tittle span {
+    font-size: 2.1vw;
+    letter-spacing: 0.64vw;
+    font-family: 'Courier', sans-serif;
+    padding-left: 4.3vw;
+    font-weight: 100;
+}
+
+.section2 .boxLeft .subTittle {
+    font-size: 2.6vw;
+    letter-spacing: 0.8vw;
+    position: relative;
+    z-index: 2;
+}
+
+.section2 .boxLeft .textColumn {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: -2.5vw 0 0;
+}
+
+.boxLeft .text,
+.back {
+    width: 15.1vw;
+    font-family: 'Courier', sans-serif;
+    font-size: 1.05vw;
+    letter-spacing: 0.22vw;
+    text-align: right;
+    position: relative;
+    z-index: 2;
+    padding: 0.5vw 1.1vw;
+    background: transparent;
+    transition: background 3s;
+}
+
+.back {
+    position: absolute;
+    left: 16.5%;
+    width: 15.1vw;
+    height: auto;
+    z-index: 0;
+    background: rgba(0, 0, 0, 0.57);
+    color: transparent;
+}
+
+.boxLeft .text:hover {
+    animation: animateBack;
+    animation-duration: .5s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out
+}
+
+.rainbowAs {
+    width: 16.5vw;
+    margin: 0 0 0 -4.7vw;
+    position: relative;
+    z-index: 1;
+}
+
+.section2 .boxRight {
+    width: 54%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.section2 .boxRight .tittle {
+    font-size: 2.12vw;
+    letter-spacing: 0.84vw;
+    padding-left: 4.2vw;
+    margin: 0 0 1.3vw;
+}
+
+.section2 .boxRight .tittle span {
+    padding-left: 11.1vw;
+}
+
+.section2 .textBox {
+    background-color: rgba(0, 0, 0, 0.83);
+    display: flex;
+    flex-direction: column;
+    padding: 1.3vw 0.5vw 1.1vw 1.3vw;
+    color: white;
+    transition: all .5s;
+}
+
+.section2 .textBox:hover {
+    background-color: rgba(0, 0, 0, 1);
+}
+
+.section2 .textBox .sub {
+    font-size: 1.8vw;
+    letter-spacing: 0.72vw;
+    margin: 0 0 1.95vw;
+    text-align: center;
+}
+
+.section2 .textBox .textColumn {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.section2 .textBox .textColumn .column {
+    width: 49.2%;
+    font-family: 'Courier', sans-serif;
+    font-size: 1vw;
+    letter-spacing: 0.1vw;
+    font-weight: 400;
+    line-height: 1.3;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.section2 .column span {
+    margin: 0 1.35vw 0 1.6vw;
+}
+
+.section2 .column div {
+    margin: 0 0 1.3vw;
+}
+
+.section2 .column div:last-of-type {
+    margin: 0;
+}
+
+.section3 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 4.5vw 0 7.3vw;
+}
+
+.section3 .title {
+    font-size: 2.57vw;
+    letter-spacing: 1vw;
+    margin: 0 0 4vw;
+}
+
+.section3 .planetBlock {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.section3 .planet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    text-transform: uppercase;
+    font-family: Andale Mono;
+    font-weight: 100;
+    letter-spacing: 0.3vw;
+    position: relative;
+}
+
+.section3 .mars {
+    width: 12.5vw;
+    height: 15.5vw;
+    font-size: 22px;
+    margin: 0 1.5vw 0 0;
+}
+
+.section3 .mars .flip-card-front {
+    background-image: url(../img/MARS1.png);
+    background-size: 80%;
+    font-size: 1.1vw;
+    letter-spacing: 1px;
+    color: #ab5535;
+    padding: 0 0 0.5vw;
+}
+
+.section3 .mars .flip-card-inner:hover,
+.section3 .pluto .flip-card-inner:hover {
+    transform: scale(1.5) translateZ(0px) rotateX(-180deg);
+    -webkit-transform: scale(1.5) translateZ(0px) rotateX(-180deg);
+}
+
+.section3 .moon .flip-card-inner:hover,
+.section3 .venus .flip-card-inner:hover {
+    transform: scale(1.5) translateZ(0px) rotateX(-180deg);
+    -webkit-transform: scale(1.5) translateZ(0px) rotateX(-180deg);
+}
+
+.section3 .flip-card-inner:hover {
+    transition-duration: 1.2s !important;
+}
+
+.section3 .mars .flip-card-back {
+    background-image: url(../img/MARS-TILE.png);
+}
+
+.section3 .mars .flip-card-back .text,
+.section3 .pluto .flip-card-back .text {
+    width: 93%;
+}
+
+.section3 .pluto {
+    width: 12.5vw;
+    height: 15.5vw;
+    font-size: 22px;
+    margin: 0 0 0 1.5vw;
+}
+
+.section3 .pluto .flip-card-front {
+    background-image: url(../img/PLUTO1.png);
+    background-size: 80%;
+    font-size: 1.1vw;
+    letter-spacing: 1px;
+    color: #d0b76a;
+    padding: 0 0 0.5vw;
+}
+
+.section3 .pluto .flip-card-back {
+    background-image: url(../img/PLUTO-TILE.png);
+}
+
+.section3 .moon {
+    width: 12.5vw;
+    height: 15.5vw;
+    font-size: 32px;
+    margin: 0 1.5vw 0 0;
+}
+
+.section3 .moon .flip-card-front {
+    background-image: url(../img/MOON1.png);
+    font-size: 1.8vw;
+    letter-spacing: 1px;
+}
+
+.section3 .moon .flip-card-back {
+    background-image: url(../img/MOON-TILE.png);
+}
+
+.section3 .venus {
+    width: 12.5vw;
+    height: 15.5vw;
+    font-size: 32px;
+    margin: 0 0 0 1.5vw;
+}
+
+.section3 .venus .flip-card-front {
+    background-image: url(../img/VENUS1.png);
+    font-size: 1.8vw;
+    letter-spacing: 1px;
+    color: #dabf6f;
+}
+
+.section3 .venus .flip-card-back {
+    background-image: url(../img/VENUS-TILE.png);
+}
+
+.section3 .center {
+    width: 28.7vw;
+    height: 26.4vw;
+    font-size: 62px;
+    z-index: 0;
+}
+
+.section3 .center .flip-card-front {
+    background-image: url(../img/SPACE1.png);
+    font-size: 3.5vw;
+    letter-spacing: -1px;
+    padding: 0 0 1.1vw;
+}
+
+.section3 .center .flip-card-back {
+    background-image: url(../img/SPACE-TILE.png);
+    background-size: 100%;
+    border-radius: 7%;
+}
+
+.section3 .flip-card-back {
+    display: flex;
+    flex-direction: column;
+    padding: 1.9vw 2vw 0 2.5vw;
+    width: 110%;
+    height: 100%;
+    justify-content: flex-start;
+    text-align: center;
+    z-index: 2;
+    background-position: 33% 48%;
+}
+
+.section3 .flip-card-back h1 {
+    text-align: left;
+    width: 100%;
+    text-transform: uppercase;
+    font-family: 'Impact', sans-serif;
+    font-size: 1.3vw;
+    line-height: 1.3vw;
+    letter-spacing: 0.4vw;
+}
+
+.section3 .flip-card-back .text {
+    font-size: 0.6vw;
+    letter-spacing: 0.1vw;
+    margin: 0 0 1vw;
+    text-align: center;
+    text-transform: capitalize;
+    font-family: 'Courier', sans-serif;
+    margin: 0 0 0.7vw;
+    line-height: 1.3;
+    width: 89%;
+}
+
+.section3 .flip-card-back .bigTitle {
+    font-size: 1vw;
+    letter-spacing: 0.3vw;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Impact', sans-serif;
+}
+
+.section3 .center .flip-card-back {
+    width: 79%;
+    height: 103%;
+    padding: 2.3vw 2vw 0 1.6vw;
+    align-items: center;
+    margin: 0 3vw;
+}
+
+.section3 .center .flip-card-back h1 {
+    font-size: 2.3vw;
+    line-height: 2.3vw;
+    letter-spacing: 0.6vw;
+    text-align: center;
+    margin: 0 0 2vw;
+}
+
+.section3 .center .flip-card-back .text {
+    font-size: 0.9vw;
+    letter-spacing: 0.3vw;
+    margin: 0 0 1.2vw;
+    line-height: 1.3;
+    width: 100%;
+}
+
+.section3 .center .flip-card-back .bigTitle {
+    font-size: 0.6vw;
+    letter-spacing: 0.1vw;
+}
+
+
+.section4 {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    overflow-x: hidden;
+}
+
+.section4 .boxRight {
+    width: 59.9%;
+    background-color: #1d2330;
+    background: linear-gradient(0deg, rgba(29, 35, 48, 1) 82%, transparent 82%);
+    overflow: hidden;
+    padding: 0 0 13.03vw;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    z-index: 1;
+}
+
+.section4 .boxRight img {
+    position: relative;
+    right: -6.9vw;
+    width: 53vw;
+    height: 51.4vw;
+}
+
+.section4 .boxLeft {
+    width: 63.5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    margin: 0 -24vw 0 0;
+    z-index: 3;
+}
+
+.section4 .boxLeft .lineBoxOne {
+    flex-direction: row;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 1.5vw;
+    cursor: default;
+}
+
+.section4 .boxLeft .title {
+    font-size: 1.41vw;
+    letter-spacing: 0.56vw;
+    width: 100%;
+    text-align: center;
+}
+
+.section4 .boxLeft .titleBig {
+    font-size: 3.91vw;
+    letter-spacing: 1.57vw;
+    width: 100%;
+    text-align: center;
+}
+
+.section4 .boxLeft .textBox {
+    width: 56.3%;
+    background-image: url(../img/smokeL.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 5.94vw 7.1vw 5.94vw 4.2vw;
+}
+
+.section4 .boxLeft .titleBox {
+    margin: 0 0 1.25vw;
+}
+
+.section4 .boxLeft .titleBox:last-of-type {
+    margin: 0;
+}
+
+.section4 .boxLeft img {
+    position: relative;
+    width: 25.3vw;
+    right: 16.1%;
+    margin-top: 7.6vw;
+}
+
+.section4 .boxLeft .line1 {
+    text-align: left;
+    padding-left: 1.93vw;
+}
+
+.section4 .boxLeft .line1 span {
+    padding-right: 0.1vw;
+}
+
+
+.section4 .boxLeft .line2 {
+    text-align: right;
+}
+
+.section4 .boxLeft .line3 {
+    padding-left: 7vw;
+}
+
+.section4 .boxLeft .line4 {
+    text-align: left;
+}
+
+.section4 .boxLeft .line5 {
+    padding-right: 3.6vw;
+}
+
+.section4 .boxLeft .line6 {
+    text-align: right;
+    padding-right: 1.7vw;
+}
+
+.section4 .boxLeft .lineBoxTwo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 2.34vw 0 0 6.1vw;
+
+}
+
+.section4 .boxLeft .contTitle {
+    font-size: 2.1vw;
+    letter-spacing: 0.83vw;
+    width: 100%;
+    text-align: left;
+    cursor: default;
+}
+
+.section4 .boxLeft .inputBox {
+    width: 66.2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1.77vw 2.55vw 3.65vw;
+    background-color: rgba(255, 255, 255, 0.07);
+    margin: 1.41vw 9.6vw 0 0;
+    position: relative;
+    z-index: 3;
+}
+
+.section4 .boxLeft .inputBox div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.section4 .boxLeft .inputBox label {
+    font-size: 1.15vw;
+    letter-spacing: 0.5vw;
+}
+
+.section4 .boxLeft .inputBox label span {
+    color: #fe1212;
+}
+
+.section4 .boxLeft .inputBox input[type=text],
+.section4 .boxLeft .inputBox input[type=email] {
+    width: 15.12vw;
+    height: 1.6vw;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: none;
+    outline: none;
+    margin: 0.53vw 0 1.04vw;
+    color: white;
+    padding: 0.3vw;
+}
+
+.section4 .boxLeft .inputBox div:last-of-type input[type=text] {
+    margin: 0.53vw 0 0;
+}
+
+.section4 .boxLeft .inputBox textarea {
+    width: 16.05vw;
+    height: 6.15vw;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: none;
+    outline: none;
+    margin: 0.53vw 0 0;
+    color: white;
+    padding: 0.3vw;
+}
+
+.section4 .boxLeft .subBtn {
+    width: 13.4vw;
+    height: 3.23vw;
+    background-color: #ce4627;
+    border-radius: 0.32vw;
+    border: none;
+    outline: none;
+    margin: -1.6vw 20vw 0 0vw;
+    color: white;
+    font-size: 2vw;
+    letter-spacing: 0.57vw;
+    text-transform: uppercase;
+    font-family: 'Krungthep', sans-serif;
+    padding-left: 0.4vw;
+    cursor: pointer;
+    position: relative;
+    z-index: 3;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.section5 {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: -12vw 0 0;
+    position: relative;
+    z-index: 2;
+    background-image: url(../img/orange-rectangle.png);
+    background-repeat: no-repeat;
+    background-position: 50% 65%;
+    background-size: 82%;
+    padding: 0 2vw 0 0;
+}
+
+.section5 .planet {
+    width: 32%;
+    height: 58vw;
+
+}
+
+.section5 .rocket {
+    width: 31.35%;
+    margin: 0 0 21.7vw -15vw;
+}
+
+.section5 .chartBox {
+    width: 40.7%;
+    height: 35.63vw;
+    margin: 0 0 3.65vw;
+    position: relative;
+    z-index: 2;
+}
+
+.errorBox {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 16.4vw 4.9vw;
+    background-image: url(../img/errorBG.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+}
+
+.errorBox::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    background-image: url(../img/errorImg.png);
+    background-repeat: no-repeat;
+    background-position: 50% 37%;
+    background-size: cover;
+}
+
+.errorBox h1 {
+    font-size: 4.43vw;
+    letter-spacing: 2.66vw;
+    margin: 0 0 3vw;
+}
+
+.errorBox p {
+    font-size: 2.55vw;
+    letter-spacing: 0.77vw;
+    padding-right: 9vw;
+}
